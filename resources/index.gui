@@ -1,0 +1,62 @@
+<svg viewport-fill="black">
+
+   <arc id="sm" x="50%-80" y="30%+10" width="160" height="160" fill="#222222" arc-width="100" start-angle="90" sweep-angle="180" />
+  
+  <text id="myClockH" x="50%-25" y="50%"
+      fill="white" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">00</text>
+  <text id="myClockM" x="50%+25"  y="50%"
+      fill="white" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">00</text>
+  
+    <text id="Battery" x="50%-65"  y="70%"
+      fill="blue" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">00</text>
+  
+      <text id="BatteryAdd" x="50%-70"  y="80%"
+      fill="blue" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">%</text>
+  
+  <text id="heartRate" x="50%"  y="80%"
+      fill="red" font-size="32" font-family="System-Regular"
+      text-anchor="middle" text-length="20">00</text>
+  
+ <svg id="offsleep" display="inline">
+  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-4" y="-110" width="8" height="110" fill="#e0e0e0" />
+  </g>
+  <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-6" y="-75" width="12" height="75" fill="#ffffff" />
+  </g>
+  <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000" />
+  </g>
+  <circle cx="50%" cy="50%" r="10" fill="#333333" />
+  </svg>
+  
+   <svg id="onsleep" display="none">
+  <g id="min" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-4" y="-110" width="8" height="110" fill="#555555" />
+  </g>
+  <g id="hour" pointer-events="visible" transform="translate(50%,50%)">
+    <rect x="$-6" y="-75" width="12" height="75" fill="#555555" />
+  </g>
+  <circle cx="50%" cy="50%" r="10" fill="#333333" />
+  </svg>
+  
+   
+   <!-- サークル1(上) -->
+   <arc id="s1b" x="50%-25" y="45" width="50" height="50" fill="#222222" arc-width="5" start-angle="0" sweep-angle="360" />
+   <arc id="s1m" x="50%-25" y="45" width="50" height="50" fill="white" arc-width="5" start-angle="0" sweep-angle="90" />
+   <!-- サークル2(右) -->
+   <arc id="s2b" x="70%" y="50%-25" width="50" height="50" fill="#222222" arc-width="5" start-angle="0" sweep-angle="360" />
+   <arc id="s2m" x="70%" y="50%-25" width="50" height="50" fill="blue" arc-width="5" start-angle="0" sweep-angle="90" />
+   <!-- サークル3(左) -->
+   <arc id="s3b" x="15%" y="50%-25" width="50" height="50" fill="#222222" arc-width="5" start-angle="0" sweep-angle="360" />
+   <arc id="s3m" x="15%" y="50%-25" width="50" height="50" fill="red" arc-width="5" start-angle="0" sweep-angle="90" />
+
+
+
+  <ellipse fill = "yellow" cx="100" cy="50" rx="100" ry="50" />
+
+  </svg>

@@ -38,7 +38,6 @@ let sminHand = document.getElementById("min");
 let screen1 = document.getElementById("offsleep");
 let screen2 = document.getElementById("onsleep");
 
-
 var latestmins;
 var boolSleepFlag = 0　　　　　　　　　　　　　//スリープしているかどうかのフラグ
 var boolSleepSettingFlag = 0; //スリープ状態セットフラグ
@@ -204,5 +203,7 @@ function ChangeNormalMode()
   hours.groupFill = "#FFFFFF";
   mins.fill = "e0e0e0";
 boolSleepFlag = 0;
+screen1.style.display = "inline";
+screen2.style.display = "none";
 }
 
