@@ -26,7 +26,11 @@ let background = document.getElementById("bg");
 //ラベル宣言
 let hLabel = document.getElementById("myClockH");
 let mLabel = document.getElementById("myClockM");
-let hrtLabel = document.getElementById("heartRate");
+
+let MultiDisp1 = document.getElementById("MultiDisp1");
+let MultiDisp2 = document.getElementById("MultiDisp2");
+
+let hrtLabel = document.getElementById("MultiDisp2");
 //console.log(document.getElementById("myClock"));
 let bat = document.getElementById("Battery");
 let arc1 = document.getElementById("s1m");
@@ -46,6 +50,8 @@ var boolSleepFlag = 0　　　　　　　　　　　　　//スリープして
 var boolSleepSettingFlag = 0; //スリープ状態セットフラグ
 const SLEEP_TIMER = 20;
 
+var KindFunction = 0;
+const MAX_FUNCTION = 5;
 //初期化処理
 init();
 
@@ -98,12 +104,65 @@ console.log(document.getElementById("hours"));
 
 let secHand = document.getElementById("secs");
 
+//////////////////////
 //画面タッチ時のイベント
 background.onclick = function(evt)
 {
   console.log("click");
   ChangeNormalMode();
 }
+//////////////////////
+
+//////////////////////
+//物理ボタンが押されたときのイベント処理
+document.onkeypress = function(e) {
+  console.log("Key pressed: " + e.key);
+
+  switch(e.key)
+  {
+    case "up":
+      KindFunction--;
+    break;
+    case "down":
+      KindFunction++;
+    break;
+    case "back":
+    break;      
+  }
+
+//ここでKindFunctionをMAXで引く
+  if(KindFunction > MAX_FUNCTION)
+  {
+    KindFunction = KindFunction - MAX_FUNCTION;
+  }
+  else if(KindFunction<0)
+  {
+    // マイナス値になった場合、折り返す
+    KindFunction = MAX_FUNCTION;
+  }
+  console.log(KindFunction);
+  MultiDisp1.style.display = "none";
+  MultiDisp2.style.display = "none";
+
+  switch(KindFunction)
+  {
+    case 0: //心拍数
+    MultiDisp1.style.display = "inline";
+    break;
+    case 1: //歩数
+      MultiDisp2.style.display = "inline";
+    break;
+    case 2: //日付
+    break;
+    case 3: //カロリー
+    break;
+    case 4: //なし
+    break;
+
+  }
+
+}
+//////////////////////
 
 // Returns an angle (0-360) for the current hour in the day, including minutes
 function hoursToAngle(hours, minutes) {
