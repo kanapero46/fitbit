@@ -1,4 +1,4 @@
-<svg viewport-fill="black">
+<svg id="bg" viewport-fill="black">
  <svg id="offsleep" display="inline">
    <arc id="sm" x="50%-80" y="30%+10" width="160" height="160" fill="#222222" arc-width="100" start-angle="90" sweep-angle="180" />
   
@@ -32,11 +32,7 @@
     <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000" />
   </g>
   <circle cx="50%" cy="50%" r="10" fill="#333333" />
-  </svg>
   
-
-  
-   
    <!-- サークル1(上) -->
    <arc id="s1b" x="50%-25" y="45" width="50" height="50" fill="#222222" arc-width="5" start-angle="0" sweep-angle="360" />
    <arc id="s1m" x="50%-25" y="45" width="50" height="50" fill="white" arc-width="5" start-angle="0" sweep-angle="90" />
@@ -46,7 +42,7 @@
    <!-- サークル3(左) -->
    <arc id="s3b" x="15%" y="50%-25" width="50" height="50" fill="#222222" arc-width="5" start-angle="0" sweep-angle="360" />
    <arc id="s3m" x="15%" y="50%-25" width="50" height="50" fill="red" arc-width="5" start-angle="0" sweep-angle="90" />
-
+</svg>
 
 <!-- スリープ中に表示する項目 -->
 <svg id="onsleep" display="none">

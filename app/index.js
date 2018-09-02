@@ -20,6 +20,9 @@ if (me.permissions.granted("access_heart_rate")) {
 
 clock.granularity = "seconds"; // seconds, minutes, hours
 
+//画面全体
+let background = document.getElementById("bg");
+
 //ラベル宣言
 let hLabel = document.getElementById("myClockH");
 let mLabel = document.getElementById("myClockM");
@@ -45,6 +48,7 @@ const SLEEP_TIMER = 20;
 
 //初期化処理
 init();
+
 
 //1秒ごとに処理
 clock.ontick = (evt) => {
@@ -93,6 +97,13 @@ clock.ontick = (evt) => {
 console.log(document.getElementById("hours"));
 
 let secHand = document.getElementById("secs");
+
+//画面タッチ時のイベント
+background.onclick = function(evt)
+{
+  console.log("click");
+  ChangeNormalMode();
+}
 
 // Returns an angle (0-360) for the current hour in the day, including minutes
 function hoursToAngle(hours, minutes) {
@@ -147,19 +158,7 @@ function updateClock(status) {
   }
 }
 
-
-// 1→01に変換関数
-function ConvTimeFormat(time)
-{
-  return ("00" + time).slice(-2); //00でreturn  
-}
-
-//100→360に変換
-function ConvBattery(battery){ return (battery*3.6); }
-
-//日付(31)→360に変換(だいたい)
-function ConvDate(date){ return (date/31)*3.6; }
-
+// スリープ設定
 function CheckSleepMode(hours, sec)
 {
 
@@ -200,10 +199,23 @@ function ChangeDarkMode(hours)
 
 function ChangeNormalMode()
 {
-  hours.groupFill = "#FFFFFF";
-  mins.fill = "e0e0e0";
-boolSleepFlag = 0;
-screen1.style.display = "inline";
-screen2.style.display = "none";
+  console.log("★UnLockEconomyMode");
+  boolSleepFlag = 0;
+  boolSleepSettingFlag = 0;
+  screen1.style.display = "inline";
+  screen2.style.display = "none";
+  updateClock("normal");
+
 }
 
+// 1→01に変換関数
+function ConvTimeFormat(time)
+{
+  return ("00" + time).slice(-2); //00でreturn  
+}
+
+//100→360に変換
+function ConvBattery(battery){ return (battery*3.6); }
+
+//日付(31)→360に変換(だいたい)
+function ConvDate(date){ return (date/31)*3.6; }
